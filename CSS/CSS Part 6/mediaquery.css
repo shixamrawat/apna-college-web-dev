@@ -1,0 +1,80 @@
+/* ============================================================
+   TOPIC: Media Queries
+   ============================================================ */
+ 
+/* 
+   Media queries let you apply CSS conditionally, based on 
+   characteristics of the device/viewport (width, height, 
+   orientation, resolution, etc). Core tool for responsive design.
+ 
+   Syntax:
+   @media (condition) {
+     selector { ... }
+   }
+ 
+   Common width-based conditions:
+   max-width  -> applies styles when viewport is <= given width (mobile-first breakpoints)
+   min-width  -> applies styles when viewport is >= given width
+ 
+   Example breakpoints often used:
+   max-width: 768px   -> tablets and below
+   max-width: 480px   -> phones
+ 
+   Can combine conditions with "and":
+   @media (min-width: 600px) and (max-width: 900px) { ... }
+ 
+   Remember: needs the viewport meta tag in HTML to work correctly
+   on real mobile devices:
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+ 
+/* ============================================================
+   TOPIC: Media Queries (Orientation)
+   ============================================================ */
+ 
+/* 
+   orientation feature checks whether the viewport is wider than 
+   tall (landscape) or taller than wide (portrait).
+ 
+   @media (orientation: landscape) { ... }   -> width > height
+   @media (orientation: portrait) { ... }    -> height > width
+ 
+   Useful for adjusting layouts when a phone/tablet is rotated,
+   independent of exact pixel width.
+*/
+h1{
+    background-color:black;
+    color:white;
+}
+
+@media (width:400px){
+    h1{
+        background-color:yellow;
+    }
+}
+
+@media (min-width:401px){
+    h1{
+        background-color:red;
+    }
+}
+
+@media (max-width:399px){
+    h1{
+        background-color:orange;
+    }
+}
+
+@media(min-width:600px) and (max-width:700px){
+    h1{
+        background-color:limegreen;
+    }
+}
+
+@media (orientation:landscape){
+    h1{
+        background-color:skyblue;
+        color:red;
+
+    }
+}

@@ -1,0 +1,126 @@
+/* this is used to select the whole html ::content */
+*{
+   font-family: 'Times New Roman';
+}
+h1{
+   text-align:center;
+   border:10px ridge #b92b27;
+}
+ h1,h3{
+    color: #b92b27;
+ }
+ 
+ a
+ /* id selector uses hashtag (#) to start and then the id  */
+ #login {
+    background-color: white;
+ }
+ #signup{
+    background-color:#b92b27;
+    color:white;
+ }
+ /* class selector uses the dot (.) then the class name */
+ .upvote{
+   background-color: green;
+   color:aliceblue;
+ }
+ /* descendant selector- when we need to select specific tag that are present inside other tag 
+ more used as compare to child combinator as it only allow direct child relation*/
+.post a{
+   color: black;
+   background-color: yellow;
+}
+nav  a{
+   color:rgb(243, 133, 152)
+   
+}
+/* adjacent sibling combinator
+   eg heading 3 that comes immediately after any paragraph */
+p + h3{
+   text-decoration: underline;
+}
+.upvote + button{
+   color: darkblue;
+   background-color: cornflowerblue;
+   
+}
+
+/* child combinator */
+/* selcet all buttons that are direct children */
+
+div> input{
+   background-color: darksalmon;
+}
+
+/* attribute selector
+   select attribute based on the presence or value of a given attribute */
+input[type]{
+   background-color:ghostwhite;
+}
+input[type=text]{
+   color:green;
+}
+input[type=password]{
+   color:red;
+}
+
+/* pseudo class - a keyword added to a selector  that specify a special state of selected elements */
+/* eg 
+   hover - when we hover of the tag
+   active- 
+   checked- 
+   nth-of-type-
+    */
+button:hover{
+   background-color: purple;
+   color:white;
+}
+button:active{
+   background-color:black;
+   color:aliceblue;
+}
+h3:hover{
+   text-decoration:none;
+   
+}
+.ques:active{
+   color:green;
+}
+
+input[type=radio]:checked+label{
+   color:red;
+   font-weight:bold;
+   
+}
+.ques:nth-of-type(2n){
+   background-color:lightpink;
+}
+/* pseudo element - It's a keyword added to a selector that lets you style a specific part of the selected element */
+/* eg first-line , first-letter */
+h1::first-letter{
+   color:purple;
+}
+.testpara::first-line{
+   color:magenta;
+}
+.testpara::selection{
+   background-color:rgb(243, 239, 22);
+}
+/* cascading
+   ~ the last order will be followed if specificity is same  
+   ~ if two css file are used the 2nd one will be proritise if specificity is   same*/
+
+
+
+/* Selector specificity */
+/* id > class,attribute,pseudo-class > element,pseudo-element */
+/* more specificitly>less specificity */
+/* if specificity same then cascading */
+/* inline specificity - it has the most specificty*/
+
+/* !important - when used in css this property cant be changed by any means not even inline specifity   */
+
+/* inheritance 
+   elements always try to inherit the properties of it's parents  */
+   /* some elements like button text dont inherit so you have to manually write inherit in that porperty section  */
+   /* some properties like height border do not get inherited */

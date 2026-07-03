@@ -1,0 +1,11 @@
+h3{
+    color: aqua;
+    background-color: goldenrod;
+}
+p{
+    /* too add colour we can use rgb format where first represent red then green then blue from 0 to 255*/
+    color: rgb(255, 255, 255);
+    /* or we can use hexadecimal code where first 2 char are for red then 2 for green 2 for blue freom 00 to ff */
+    background-color: #ffff00);
+
+}

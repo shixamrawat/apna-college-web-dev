@@ -1,0 +1,199 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    text-align: center;
+    border: 3px solid black;
+    margin: 20px;
+    display: inline-block;
+}
+h2{
+   margin: 20px;
+}
+/* =====================================================
+   POSITION
+   Controls how an element is positioned on a webpage.
+===================================================== */
+
+/*
+By default:
+position: static;
+
+Types of Position:
+1. static   (Default)
+2. relative
+3. absolute
+4. fixed
+5. sticky
+*/
+
+/* -----------------------------------------------------
+   position: static;
+----------------------------------------------------- */
+/*
+- Default position of every element.
+- Follows the normal document flow.
+- top, right, bottom, and left DO NOT work.
+
+Example:
+position: static;
+*/
+#static{
+    background-color:yellow;
+    position:static;
+    top:100px;
+    left:100px; 
+    /*  left and right does't work*/
+}
+/* -----------------------------------------------------
+   position: relative;
+----------------------------------------------------- */
+/*
+- Element stays in the normal document flow.
+- Can be moved using:
+  top, right, bottom, left.
+- The original space is still reserved.
+
+Example:
+position: relative;
+top: 20px;
+left: 30px;
+*/
+/*
+Before:
+[ BOX ]
+
+After:
+[ BOX ]
+(Original empty space remains)
+*/
+#relative{
+   background-color:yellow;
+   position:relative;
+   top:50px;
+   left: 50px;
+}
+
+/* -----------------------------------------------------
+   position: absolute;
+----------------------------------------------------- */
+/*
+- Removed from the normal document flow.
+- Positioned relative to the nearest ancestor
+that has a position other than static.
+- If no positioned ancestor exists,
+it is positioned relative to the viewport.
+
+Example:
+position: absolute;
+top: 10px;
+right: 20px;
+*/
+
+/*
+Parent (position: relative)
+
++-------------------------+
+|                         |
+|               [ BOX ]   |
+|                         |
++-------------------------+
+*/
+
+#absolute{
+   background-color:yellow;
+   position:absolute;
+   top:100px;
+   left: 100px;
+}
+/* -----------------------------------------------------
+position: fixed;
+----------------------------------------------------- */
+/*
+   - Removed from the normal document flow.
+   - Positioned relative to the browser window (viewport).
+- Remains visible even when the page is scrolled.
+
+Common Uses:
+- Navbar
+- Chat button
+- Back-to-top button
+
+Example:
+position: fixed;
+bottom: 20px;
+right: 20px;
+*/
+#fixed{
+   background-color:yellow;
+   position:fixed;
+   top:200px;
+   left: 150px;
+}
+
+/* -----------------------------------------------------
+position: sticky;
+----------------------------------------------------- */
+/*
+- Behaves like relative until a scroll limit is reached.
+- Then behaves like fixed.
+- Requires at least one of:
+  top, bottom, left, or right.
+
+Common Uses:
+- Sticky navbar
+- Table headers
+
+Example:
+position: sticky;
+top: 0;
+*/
+
+/* =====================================================
+   TOP, RIGHT, BOTTOM, LEFT
+===================================================== */
+#sticky{
+   background-color:yellow;
+   position:sticky;
+   left: 150px;
+   top: 10px;;
+}
+/* to have space for sticky to work */
+.spacer {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    display: block;
+}
+
+/*
+These properties move positioned elements.
+
+top    -> Moves downward from the top edge.
+right  -> Moves inward from the right edge.
+bottom -> Moves upward from the bottom edge.
+left   -> Moves inward from the left edge.
+
+They work with:
+✔ relative
+✔ absolute
+✔ fixed
+✔ sticky
+
+They DO NOT work with:
+✖ static
+*/
+
+
+
+/* =====================================================
+   QUICK SUMMARY
+===================================================== */
+
+/*
+static   -> Default position.
+relative -> Move from original position.
+absolute -> Position relative to nearest positioned parent.
+fixed    -> Position relative to viewport.
+sticky   -> Relative until scrolling, then fixed.
+*/

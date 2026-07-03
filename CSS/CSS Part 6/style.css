@@ -1,0 +1,346 @@
+
+/* ===========================
+   CSS GRID
+   ===========================
+
+   display: grid;
+   -> Turns a normal container into a GRID container.
+   -> All direct children become GRID items.
+
+   Unlike Flexbox:
+   -> Flexbox is one-dimensional.
+      (Works in rows OR columns.)
+
+   -> Grid is two-dimensional.
+      (Works with rows AND columns together.)
+
+   Think of Grid like a chessboard.
+
+          Grid Lines
+        1    2    3    4
+      +----+----+----+
+   1  |    |    |    |
+      +----+----+----+
+   2  |    |    |    |
+      +----+----+----+
+   3  |    |    |    |
+      +----+----+----+
+   4
+
+   GRID LINE
+   -> The horizontal and vertical lines that divide the grid.
+   -> Lines are numbered starting from 1.
+
+   GRID CELL
+   -> The smallest unit of a grid.
+   -> Formed by the intersection of one row and one column.
+
+   GRID TRACK
+   -> The space between two adjacent grid lines.
+   -> A row track is the space between two horizontal lines.
+   -> A column track is the space between two vertical lines.
+
+   GRID ITEM
+   -> Any direct child of the grid container.
+
+   Grid is commonly used for:
+   -> Page layouts
+   -> Dashboards
+   -> Image galleries
+   -> Card layouts
+   -> Responsive designs
+*/
+/* ===========================
+   GRID TEMPLATE ROWS & COLUMNS
+   ===========================
+
+   grid-template-columns
+   -> Defines the number and width of columns.
+
+   grid-template-rows
+   -> Defines the number and height of rows.
+
+   Syntax:
+
+   grid-template-columns: value;
+   grid-template-rows: value;
+
+   Values can be:
+   -> px (pixels)
+   -> % (percentage)
+   -> fr (fraction of available space)
+   -> auto
+   -> repeat()
+
+   Examples:
+
+   grid-template-columns: 100px 100px 100px;
+   -> Creates 3 columns, each 100px wide.
+
+   grid-template-rows: 100px 200px;
+   -> Creates 2 rows.
+      First row = 100px
+      Second row = 200px
+
+   grid-template-columns: 1fr 2fr 1fr;
+   -> Creates 3 columns.
+      Middle column gets twice the available space.
+
+   grid-template-rows: 1fr 2fr;
+   -> Creates 2 rows.
+      Second row gets twice the available height.
+
+   grid-template-columns: 100px 1fr 200px;
+   -> Fixed, Flexible, Fixed.
+
+   grid-template-rows: 100px auto 150px;
+   -> Fixed, Automatic, Fixed.
+
+   repeat()
+   -> Used to repeat the same value multiple times.
+   -> Makes the code shorter and easier to read.
+
+   Syntax:
+
+   repeat(number_of_times, value);
+
+   Instead of writing:
+
+   grid-template-columns: 100px 100px 100px;
+
+   We can write:
+
+   grid-template-columns: repeat(3, 100px);
+
+   More examples:
+
+   grid-template-columns: repeat(4, 1fr);
+   -> Creates 4 equal-width columns.
+
+   grid-template-rows: repeat(3, 100px);
+   -> Creates 3 rows, each 100px tall.
+*/
+
+/* ===========================
+   GRID GAP (row-gap & column-gap)
+   ===========================
+
+   By default, grid items sit right next to each other.
+   -> No space between rows or columns unless you add it.
+
+   gap properties add spacing BETWEEN tracks only.
+   -> NOT between the item and the container edge.
+   -> NOT extra space inside an item (that's padding).
+
+   row-gap
+   -> Space between ROWS (horizontal gap between row tracks).
+
+   column-gap
+   -> Space between COLUMNS (vertical gap between column tracks).
+
+   Syntax:
+
+   row-gap: value;
+   column-gap: value;
+
+   Example:
+
+   row-gap: 10px;
+   column-gap: 10px;
+   -> 10px space between every row AND every column.
+
+   SHORTHAND: gap
+   -> Older spec called it "grid-gap", now just "gap".
+   -> Works for both Grid and Flexbox (modern browsers).
+
+   gap: row-gap column-gap;
+
+   Example:
+
+   gap: 10px 20px;
+   -> row-gap = 10px
+   -> column-gap = 20px
+
+   If you give ONE value:
+
+   gap: 15px;
+   -> Sets BOTH row-gap and column-gap to 15px.
+
+   NOTE:
+   -> grid-gap, grid-row-gap, grid-column-gap are the OLD names.
+   -> gap, row-gap, column-gap are the CURRENT standard names.
+   -> Use the new names — old ones are kept only for backward compatibility.
+
+   IMPORTANT MATH REMINDER:
+   -> Gaps eat into your container's total space.
+   -> e.g. 3 columns of 100px + 2 column-gaps of 10px
+      = 300px + 20px = 320px total width needed.
+   -> Make sure container width/height accounts for gaps,
+      or items will overflow / wrap unexpectedly.
+*/
+
+/* ===========================
+   JUSTIFY-ITEMS & ALIGN-ITEMS (Container)
+   ===========================
+   TL;DR: Controls where items sit INSIDE their own cell,
+   if the item is smaller than the cell.
+
+   justify-items -> HORIZONTAL axis (left/right)
+   align-items   -> VERTICAL axis (top/bottom)
+
+   Set on the CONTAINER -> affects ALL items at once.
+
+   Values for both:
+   -> start    : item hugs the start edge of its cell
+   -> end      : item hugs the end edge of its cell
+   -> center   : item centered in its cell
+   -> stretch  : item fills the full size of its cell (DEFAULT)
+
+   Example:
+   justify-items: center;
+   -> Every item centers horizontally inside its own cell.
+
+   align-items: center;
+   -> Every item centers vertically inside its own cell.
+*/
+
+/* ===========================
+   JUSTIFY-SELF & ALIGN-SELF (Item)
+   ===========================
+   TL;DR: Same as justify-items/align-items,
+   but set on ONE item, and only affects that item.
+   Overrides whatever justify-items/align-items set on container.
+
+   justify-self -> HORIZONTAL axis, single item
+   align-self   -> VERTICAL axis, single item
+
+   Same values as above: start | end | center | stretch
+
+   Example:
+   #item-x { justify-self: end; }
+   -> Only this item moves to the right edge of its cell,
+      regardless of what other items are doing.
+*/
+
+/* ===========================
+   PLACE-ITEMS (Shorthand, Container)
+   ===========================
+   TL;DR: One-line shorthand for align-items + justify-items.
+
+   Syntax:
+   place-items: align-items justify-items;
+
+   ONE value given -> applies to BOTH axes.
+   place-items: center;
+   -> same as align-items: center; justify-items: center;
+
+   TWO values given -> first = align, second = justify.
+   place-items: start center;
+   -> align-items: start;
+   -> justify-items: center;
+*/
+
+/* ===========================
+   PLACE-SELF (Shorthand, Item)
+   ===========================
+   TL;DR: One-line shorthand for align-self + justify-self.
+   Only affects the single item it's written on.
+
+   Syntax:
+   place-self: align-self justify-self;
+
+   ONE value given -> applies to BOTH axes for this item.
+   place-self: center;
+   -> same as align-self: center; justify-self: center;
+
+   TWO values given -> first = align, second = justify.
+   place-self: end start;
+   -> align-self: end;
+   -> justify-self: start;
+*/
+h1{
+    text-align:center;
+    color:crimson;
+}
+.container{
+    height:600px;
+    width:350px;
+    background-color:purple;
+    display:inline-grid; 
+    grid-template-rows:100px 100px 100px ;
+    grid-template-columns:repeat(3, 1fr);
+    /* grid-template-rows: 1fr 1fr 1fr; does the same job as above */
+
+    row-gap:10px;
+    column-gap:10px;
+    /* grid-gap:10px 10px; this can be used to set both gap at once 
+      grid-gap: 15px; this will set both row and grid gap to 15px  */
+    justify-items:center;
+    align-items:center;
+    /* place-items:center; this can be used when both justify and align items are using the same value so we can use this instead of the above two */
+
+}
+
+.item{
+    height:50px;
+    width:50px;
+    background-color:greenyellow;
+    border:2px solid black;
+    text-align:center;
+}
+
+/* ===========================
+   GRID-ROW & GRID-COLUMN (Item Placement)
+   ===========================
+   TL;DR: Lets you manually place an item on specific
+   grid lines, or make it SPAN multiple rows/columns.
+
+   By default, items auto-place themselves in order,
+   one cell at a time, left to right, top to bottom.
+
+   grid-row and grid-column let you OVERRIDE that —
+   place an item exactly where you want, or stretch
+   it across multiple tracks.
+
+   These are applied to the ITEM, not the container.
+*/
+
+/* ---- Basic syntax ---- */
+
+/*
+   grid-column: start-line / end-line;
+   grid-row: start-line / end-line;
+
+   Remember: lines are numbered, NOT cells.
+   A 4-column grid has 5 vertical lines (1,2,3,4,5).
+
+        1    2    3    4    5
+        |    |    |    |    |
+        +----+----+----+----+
+        |    |    |    |    |
+        +----+----+----+----+
+*/
+
+#one{
+   /* grid-row:1/4; */
+   justify-self:start;
+   align-self:start;
+}
+#two{
+   /* grid-column:1/4; */
+   place-self:stretch;
+}
+/* ---- SHORTHAND: span keyword ---- */
+
+/*
+   Instead of counting end lines manually,
+   use "span" to say HOW MANY tracks to cover.
+
+   grid-column: start-line / span number;
+*/
+#three{
+   /* grid-column:1/span 2; */
+       /* Starts at line 1, spans 2 columns.
+       -> Same result as "1 / 3" above. */
+
+}

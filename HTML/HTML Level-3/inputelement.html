@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input elements</title>
+</head>
+<body>
+    <h2>Input Elements</h2>
+    <hr>
+    <!--  boxes that are checked (ticked) when activated -->
+    <form action="/server">
+        <h3>Checkbox Element</h3>
+        <div>
+            <label for="age">Are you 18+</label>
+            <!-- if input have checked the value will be checked by default  -->
+            <input type="checkbox" id="age" name="age" checked>
+            <!-- we can use checkbox to select multiple option from a set of option -->
+            <div>
+                <input type="checkbox" name="sub" id="maths " value="maths">
+                <label for="maths">Maths</label>
+                <input type="checkbox" name="sub" id="eng " value="eng">
+                <label for="eng">English</label>
+                <input type="checkbox" name="sub" id="sci " value="sci">
+                <label for="sci">Scinece</label>
+            </div>
+        </div>
+        <h3>Radio Element</h3>
+        <div>
+            <!-- and since name attibute is fruit for all we can only select one option -->
+            <!-- for radio element we need to pass value as the brouser pass inforamation as name=value format
+                 and since we can only select one option in radio we use value that help us to set value -->
+            <input type="radio" name="fruit"  id="apple" value="apple">
+            <Label for="apple">Apple</Label>
+            <input type="radio" name="fruit"  id="mango" value="mango">
+            <Label for="mango">Mango</Label>
+            <input type="radio" name="fruit"  id="graps" value="graps">
+            <Label for="graps">Grapes   </Label>
+        </div>
+        <div>
+            <h3>Range Element</h3>
+            <!-- range element is used to represent range in form of a bar -->
+            <label for="vol">Volume</label>
+            <!-- min reperesent the min and max represent the max value -->
+            <!-- step make sure that how much pos the bar move in one step and value is the default value  -->
+            <input type="range" id="vol" name="vol" min="0" max="100" step="10" value="50">
+        </div>
+
+        <div>
+            <h3>Select Element</h3>
+            <!-- select tag creates a drop down ui with option to select from  -->
+            <label for="profession">Choose your profession </label>
+            <select name="profession" id="profession">
+                <!-- we can use selected to set a option as default or the first element is selected by default -->
+                <option>Select your option</option>
+                <option value="stu" >Student</option>
+                <option value="dev">Developer</option>
+            </select>
+        </div>
+        <div>
+            <h3>Textarea Element</h3>
+            <label for="feedback">Feedback</label>
+            <textarea name="feedback" id="feedback" placeholder="Write your feedback here :)"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>

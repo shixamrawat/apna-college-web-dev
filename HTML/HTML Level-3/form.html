@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Forms</h2>
+    <!-- form is used to create a form
+     action in form is used to define what action to perform when a form is submitted or where the date must be sent
+      this could be a java script file a server or a website -->
+    <form action="/action">
+        <!-- input is used to take input using the type attribute we can input various type of data -->
+        <!-- placeholder is used to hold the place inside the input box it display text but disappear as soon as u type -->
+        <!-- Lable represent a caption for an input item that club the captopn and input as one -->
+         <!-- id is an unique name given to a html entity that can be used to style or relate for that entity -->
+        <div>
+            <label for="username">Username</label> 
+            <input type="text" placeholder="input username here" id="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" placeholder="input your password" id="password">
+        </div>
+        <div>
+            <label for="number">Number</label>
+            <input type="number" placeholder="input Number" id="number">
+        </div>
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" placeholder="input DOB" id="dob">
+        </div>
+
+        <!-- buttons  Buttons are used to perform various operations -->
+        <!-- three buttons in html are
+         submit - which is used to submit the form this is the default value for all buttons
+         reset - this is used to reset the form (remove all the info that is filled in the form)
+         button - this is used to perform custom operation using javaspcipt it had no default behaviour -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Button</button>
+        
+        
+        
+    </form>
+    <hr>
+    <h2>Name attribute</h2>
+    <!-- The name attribute is often used in form elements to reference the data when the form is submitted
+     so that the date can be accessed using that name attribute -->
+    <form action="https://www.google.com/search">
+        <div>
+            <label for="search">Search</label>
+            <input type="text" name="q" placeholder="Google Search" id="search">
+            <button>Search</button>
+        </div>
+    </form>
+</body>
+</html>

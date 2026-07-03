@@ -1,0 +1,81 @@
+/* =========================================================
+   BLOCK vs INLINE ELEMENTS
+   =========================================================
+
+   BLOCK ELEMENTS
+   --------------
+   • Always start on a new line.
+   • Take up as much horizontal space as possible
+     (full width of the parent/container by default).
+   • Respect CSS width and height properties.
+   • Both horizontal and vertical margins work.
+   • Examples: <div>, <p>, <h1>-<h6>, <section>
+
+   INLINE ELEMENTS
+   ---------------
+   • Do not start on a new line.
+   • Only take up as much width as their content requires.
+   • width and height properties generally do not apply.
+   • Horizontal margins work, vertical margins do not affect layout.
+   • Padding works on all sides, but top and bottom padding
+     may overlap surrounding content.
+   • Examples: <span>, <a>, <strong>, <em>
+
+   Quick Rule:
+   Block = Full-width, new line.
+   Inline = Content-width, same line.
+   ========================================================= */
+
+
+/* Display - CSS property sets whether an element is treated as a block or inline box and the layout used for its children 
+    1 display:block; element behave as block
+    2 display:inline; element behave as inline
+    3 display:inline-block; element behave as inline but use properties as block because 
+    inline does not allow properties properly
+    4 display:none; to hide that element
+    */
+h1{
+    display:inline;
+    background-color:aquamarine;
+    margin:10px;
+}
+span{
+    margin:10px;
+    display:block;
+    background-color:pink;
+}
+
+div{
+    background-color:green;
+    height:100px;
+    width:100px;
+    padding:10px;
+    margin:12px;
+    border:5px solid yellow;
+    display:inline-block;
+}
+#third{
+    display:none;
+}
+/*  percentage - It is often used to define a size as relative to an element's parent object
+    eg Width: 50%; realative to the pagent element*/
+
+h2{
+    border:3px solid red;
+    width:33.33%; /* occupy 1/3 width of the horizontal screen*/
+}
+
+#outer{
+    height:400px;
+    width:400px;
+    background-color:yellow;
+    border:5px solid black; 
+    margin:50px;
+}
+#inner{
+    height:100px;
+    width:100px;
+    background-color:orange;
+    border:5px solid black; 
+    margin-left:20%;
+}

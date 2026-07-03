@@ -1,0 +1,75 @@
+/* height width are use to select the height and width of the box(element)  */
+
+div{
+    height:100px;
+    width: 600px;
+    background-color:pink;
+    text-align:center;
+    
+}
+
+/* border 
+is used to add border to the element it can be done by using individual border properies or by using the border short hand */
+
+/* border sides can be changes using properites
+    border-right-color: or border-right:  */
+div{
+    border-width:5px;
+    border-style:dashed;
+    border-color:green;
+    border-top:5px solid orange;
+}
+
+h1{
+    /* text-align:center; */
+    border: 4px solid cornflowerblue;
+    margin:10px;
+}
+
+/* border radius- It's used to give the curve corner to border */
+/* if we add border-radius to 50% it will become a full circle */
+/* we can control each individual corner just like border  */
+div{
+    border-radius:10px;
+    /* border-top-right-radius:40px;
+    border-bottom-left-radius:40px;  or you can use */
+    border-radius:10px 40px;
+}
+
+/* padding give the padding area(gap in box) in the content 
+     */
+     /* can also be used as
+      1 padding: 10px;          all padding 
+      2 padding: 10px 10px;     top & bottom / left & right
+      3 padding: 10px 20px 10px;    top / left & right / bottom
+      4 padding: 10px 20px 10px 10px;  top right bottom left*/
+
+button{
+    padding: 10px;
+    border:4px solid grey;
+    background-color:yellow;
+    border-radius:10px;
+
+}
+
+/* Margin - This is used to provide margin(gap btw each element)
+    apply to all four sides 
+margin: 1em;
+margin: -3px;
+
+/* top and bottom | left and right 
+margin: 5% auto;
+
+/* top | left and right | bottom 
+margin: 1em auto 2em;
+
+/* top | right | bottom | left 
+margin: 2px 1em 0 auto; */
+
+div{
+    margin:10px;
+}
+
+/* display - sets whether an element is treated as a block or inline box and the layout used for its children
+    */
+

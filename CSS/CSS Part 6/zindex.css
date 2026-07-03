@@ -1,0 +1,41 @@
+/* ============================================================
+   TOPIC: z-index
+   ============================================================ */
+
+/* 
+   z-index controls stacking order of elements along the z-axis 
+   (which one appears on top when elements overlap).
+
+   Higher z-index = appears on top of lower z-index elements.
+
+   IMPORTANT: z-index only works on elements with a position 
+   value other than "static" (i.e. relative, absolute, fixed, sticky).
+   Without position set, z-index is ignored.
+
+   Elements are compared only within the same stacking context 
+   (e.g. siblings). Default value is "auto" (stacks in DOM order).
+*/
+.box{
+    height:100px;
+    width:100px;
+    color:white;
+    border:2px solid yellow ;
+    text-align:center;
+    line-height:100px;
+    font-size:20px;
+}
+
+#one{
+    background-color:blue;
+    position:relative;
+    z-index:2;
+}
+#two{
+    background-color:red;
+    position:relative;
+    bottom:50px;
+    z-index:1;
+}
+#three{
+    background-color:green;
+}

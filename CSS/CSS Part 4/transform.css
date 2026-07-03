@@ -1,0 +1,271 @@
+section{
+    margin-top:100px;
+}
+
+div{
+    width:200px;
+    height:50px;
+    text-align:center;
+    background-color:#7aa874;
+    border:2px solid black;
+    margin:10px auto;
+}
+
+div:nth-of-type(2n){
+    background-color:#f7db6a;
+}
+
+div:nth-of-type(3n){
+    background-color:#ebb02d;
+}
+
+/* Transform
+
+   Definition:
+   Changes the appearance or position of an element without
+   affecting the layout of surrounding elements.
+
+   Common Transform Functions:
+   rotate()    -> rotates an element
+   scale()     -> changes size
+   translate() -> moves position
+   skew()      -> tilts element
+
+   Multiple transforms can be combined together.
+
+   Syntax:
+   transform: function(value);
+
+*/
+
+/* Rotate
+
+   Definition:
+   Rotates an element by a specified angle.
+
+   Positive Value  -> clockwise rotation
+   Negative Value  -> counter-clockwise rotation
+
+   Common Unit:
+   deg -> degrees
+
+   Example:
+   transform: rotate(45deg);
+
+*/
+#one{
+    transform:rotate(45deg);
+}
+
+/* Scale
+
+   Definition:
+   Changes the size of an element.
+
+   scale(1)   -> original size
+   scale(0.5) -> half size
+   scale(2)   -> double size
+
+   scale(x,y)
+   -> x controls width
+   -> y controls height
+
+   Example:
+   transform: scale(0.5);
+   transform: scale(0.5, 2);
+
+*/
+#two{
+    transform:scale(0.5);
+
+    /* transform:scale(0.5,2);
+       Width becomes half.
+       Height becomes double.
+    */
+}
+
+/* Translate
+
+   Definition:
+   Moves an element from its original position.
+
+   translate(x,y)
+   -> x moves left(-) or right(+)
+   -> y moves up(-) or down(+)
+
+   translateX(value)
+   -> moves only horizontally
+
+   translateY(value)
+   -> moves only vertically
+
+   Example:
+   transform: translate(100px, 20px);
+   transform: translateX(50px);
+   transform: translateY(50px);
+
+*/
+#three{
+    transform:translate(100px, 15px);
+
+    /* transform: translateY(100px);
+       Moves the element only on the Y axis.
+    */
+}
+
+/* Skew
+
+   Definition:
+   Tilts an element along the X or Y axis.
+
+   Creates a slanted or italic-like appearance.
+
+   Positive and negative values tilt in opposite directions.
+
+   Example:
+   transform: skew(20deg);
+   transform: skew(-20deg);
+
+*/
+#four{
+    transform:skew(-25deg);
+}
+
+/* Multiple Transforms
+
+   Definition:
+   Multiple transform functions can be applied in a single
+   transform property.
+
+   Important:
+   If transform is written again, the previous transform
+   will be overwritten.
+
+   Wrong:
+   transform: rotate(30deg);
+   transform: scale(2);
+
+   Result:
+   Only scale(2) is applied.
+
+   Correct:
+   transform: rotate(30deg) scale(2);
+
+*/
+#five{
+    transform:rotate(-30deg) translateY(100px) skew(20deg);
+}
+
+/* Individual Transform Properties
+
+   Definition:
+   Modern CSS allows transform functions to be written as
+   separate properties.
+
+   Examples:
+   rotate: 45deg;
+   scale: 1.5;
+   translate: 50px 20px;
+
+   Note:
+   Browser support is good, but transform:
+   remains the most commonly used method.
+
+*/
+
+/* Box Shadow
+
+   Definition:
+   Adds a shadow around an element to create depth and
+   visual separation.
+
+   Syntax:
+   box-shadow:
+   horizontal-offset
+   vertical-offset
+   blur-radius
+   spread-radius
+   color;
+
+   horizontal-offset
+   -> left(-) right(+)
+
+   vertical-offset
+   -> up(-) down(+)
+
+   blur-radius
+   -> controls softness
+
+   spread-radius
+   -> controls shadow size
+
+   color
+   -> shadow color
+
+   Example:
+   box-shadow: 5px 5px 10px 0px lime;
+
+*/
+#boxshadow{
+    box-shadow: 5px 5px 10px 0px lime;
+    height:100px;
+    width:100px;
+    background-color:aquamarine;
+    transform:translateY(150px);
+}
+
+/* Background Image
+
+   Definition:
+   Adds an image behind the content of an element.
+
+   Syntax:
+   background-image: url("image.jpg");
+
+   Common Properties:
+
+   background-repeat
+   -> controls whether the image repeats
+
+   no-repeat
+   -> image appears only once
+
+   background-size
+   -> controls image size
+
+   cover
+   -> fills entire element
+   -> image may be cropped
+
+   contain
+   -> shows complete image
+   -> may leave empty space
+
+   auto
+   -> uses original image size
+
+   background-position
+   -> controls image placement
+
+   center
+   -> places image in the center
+
+   Example:
+
+   background-image: url("image.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+*/
+#backgroundimg{
+    transform:translateY(200px);
+    height:400px;
+    width:400px;
+    margin-bottom:100px;
+
+    background-image:url("https://wallpapercave.com/wp/5ElHl5f.jpg");
+    /* background-repeat:no-repeat; */
+    background-size:cover;
+    background-position:center;
+}

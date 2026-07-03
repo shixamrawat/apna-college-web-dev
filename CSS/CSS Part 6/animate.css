@@ -1,0 +1,94 @@
+/* ============================================================
+   TOPIC: Animation in CSS
+   ============================================================ */
+ 
+/* 
+   CSS Animations let you change property values smoothly over time,
+   without JavaScript. Built using @keyframes + animation properties.
+ 
+   @keyframes — defines the stages/steps of the animation
+   (use "from/to" for 2 stages, or 0%-100% for multiple stages)
+ 
+   animation-name        -> which @keyframes rule to use
+   animation-duration     -> how long one cycle takes (e.g. 2s)
+   animation-timing-function -> speed curve (ease, linear, ease-in-out...)
+   animation-delay         -> wait time before animation starts
+   animation-iteration-count -> number of repeats (number or infinite)
+   animation-direction      -> normal / reverse / alternate / alternate-reverse
+   animation-fill-mode      -> keeps styles before/after animation (forwards, backwards, both)
+   animation-play-state     -> running / paused
+*/
+/* ============================================================
+   TOPIC: Animation Shorthand
+   ============================================================ */
+ 
+/* 
+   Shorthand combines all animation-* properties into a single line.
+ 
+   Order: name duration timing-function delay iteration-count direction fill-mode play-state
+   (duration must come before delay — both are time values, first one is read as duration)
+   */
+   
+   .box{
+       height:100px;
+       width:300px;
+       background-color:pink;
+       margin-bottom:10px;
+    /* animation-name:font;
+    animation-duration:4s;
+    animation-timing-function:ease-in;
+    animation-delay:0.2s;
+    animation-iteration-count:2;
+    animation-direction:alternate; */
+    animation:animate 4s ease-in 0.2s 3 alternate; 
+        
+}
+@keyframes animate{
+    from{
+        font-size:20px;
+        background-color:pink;
+        height:100px;
+        width:300px;
+    }
+    to{
+        font-size:150px;
+        background-color:red;
+        height:300px;
+        width:600px;
+        border-radius:10px;
+    }
+}
+/* ============================================================
+   TOPIC: % in Animation
+   ============================================================ */
+ 
+/* 
+   Percentages inside @keyframes represent stages of progress 
+   through the animation timeline:
+   0%   = starting state
+   100% = ending state
+ 
+   You can add as many in-between percentages as needed 
+   (25%, 50%, 75%, etc.) for finer control over the animation.
+*/
+.box2{
+    animation:box2 5s ease .2s 3 alternate;
+}
+
+@keyframes box2{
+    0%{
+        background-color:indigo;
+    }
+    25%{
+        background-color:red;
+    }
+    50%{
+        background-color:yellow;
+    }
+    75%{
+        background-color:green;
+    }
+    100%{
+        background-color:blue;
+    }
+}

@@ -1,0 +1,30 @@
+/*  em - unit means "my parent element's font-size" if used for font-size, and "my own font-size" when used for anything else */
+#outer{
+    background-color:cornflowerblue;
+    padding:10px;
+    margin:5px;
+    height:300px;
+    width:300px;
+    font-size:50px;
+}
+#inner{
+    background-color:pink;
+    padding:10px;
+    margin:5px;
+    height:100px;
+    width:100px;
+    font-size:.5em;
+}
+button{
+    margin-top:10px;
+    background-color:yellow;
+    color:black;
+    border:5px solid black;
+    border-radius:20px;
+    font-size:50px;
+    padding-left:.5em;
+    padding-right:.5em;
+}
+/* rem - unit means "The root element's font-size" (rem stands for "root em"). The <li> elements inside the <ul> with a class of rems take their sizing from the root element (<html>). */
+
+/* rem is used when we need to use relative size in nested elements to avoid SNOWBALL EFFECT */

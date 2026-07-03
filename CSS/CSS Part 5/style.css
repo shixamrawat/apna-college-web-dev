@@ -1,0 +1,476 @@
+/* ===========================
+   FLEXBOX - PART 1
+   ===========================
+
+   display: flex;
+   -> Turns a normal container into a flex container.
+   -> All direct children become flex items.
+   -> By default, items are arranged in a row.
+
+   flex-direction
+   -> Decides the direction of the MAIN AXIS.
+
+   Values:
+   row            -> Left to Right (Default)
+   row-reverse    -> Right to Left
+   column         -> Top to Bottom
+   column-reverse -> Bottom to Top
+
+   Remember:
+   Main Axis = Direction chosen by flex-direction.
+   Cross Axis = Perpendicular to the main axis.
+
+   row      -> Main Axis = Horizontal
+               Cross Axis = Vertical
+
+   column   -> Main Axis = Vertical
+               Cross Axis = Horizontal
+*/
+/* ===========================
+   FLEXBOX - PART 2
+   ===========================
+
+   justify-content
+   -> Aligns flex items along the MAIN AXIS.
+   -> Creates space between or around items.
+
+   Works on:
+   Main Axis only.
+
+   If flex-direction: row
+   -> Moves items horizontally.
+
+   If flex-direction: column
+   -> Moves items vertically.
+
+   Common Values:
+
+   flex-start   -> Items start from the beginning. (Default)
+
+   flex-end     -> Items move to the end.
+
+   center       -> Items are placed at the center.
+
+   space-between
+   -> First item touches the start.
+   -> Last item touches the end.
+   -> Equal space ONLY between items.
+
+   space-around
+   -> Equal space around every item.
+   -> Edge spaces are half the size of middle spaces.
+
+   space-evenly
+   -> Equal space everywhere.
+   -> All gaps (including edges) are exactly equal.
+
+   Remember:
+   justify-content always follows the Main Axis.
+*/
+
+/* ===========================
+   FLEXBOX - PART 3
+   ===========================
+
+   flex-wrap
+   -> Decides whether flex items should stay
+      on one line or move to the next line.
+
+   By default, Flexbox tries to fit
+   everything into a single line.
+
+   Works on the Main Axis.
+
+   Values:
+
+   nowrap (Default)
+   -> All items stay on one line.
+   -> Items may shrink to fit.
+
+   wrap
+   -> Items move to the next line
+      when there isn't enough space.
+
+   wrap-reverse
+   -> Same as wrap, but lines are
+      stacked in the reverse direction.
+
+   Remember:
+   nowrap      = One line only.
+   wrap        = Multiple lines if needed.
+   wrap-reverse= Multiple lines in reverse order.
+*/
+/* ===========================
+   FLEXBOX - PART 4
+   ===========================
+
+   align-items
+   -> Aligns flex items along the CROSS AXIS.
+   -> Changes the position of ALL flex items.
+
+   Works on:
+   Cross Axis only.
+
+   If flex-direction: row
+   -> Cross Axis = Vertical
+   -> Items move up and down.
+
+   If flex-direction: column
+   -> Cross Axis = Horizontal
+   -> Items move left and right.
+
+   Common Values:
+
+   stretch (Default)
+   -> Items stretch to fill the container
+      along the Cross Axis.
+   -> Works only if the item has NO fixed
+      size on the Cross Axis.
+
+   flex-start
+   -> Items move to the beginning
+      of the Cross Axis.
+
+   flex-end
+   -> Items move to the end
+      of the Cross Axis.
+
+   center
+   -> Items are placed at the center
+      of the Cross Axis.
+
+   baseline
+   -> Aligns items according to
+      their text baseline.
+*/
+
+/* ===========================
+   FLEXBOX - PART 5
+   ===========================
+
+   align-content
+   -> Aligns MULTIPLE rows (or columns)
+      of flex items along the CROSS AXIS.
+
+   IMPORTANT:
+   align-content works ONLY when:
+   ✔ flex-wrap: wrap;
+   ✔ There are multiple rows/columns.
+   ✔ Extra space exists on the Cross Axis.
+provi
+   If all items fit in one row,
+   align-content has NO EFFECT.
+
+   Common Values:
+
+   flex-start
+   -> All rows move to the beginning.
+
+   flex-end
+   -> All rows move to the end.
+
+   center
+   -> All rows are centered.
+
+   space-between
+   -> First row touches the start.
+   -> Last row touches the end.
+   -> Equal space between rows.
+
+   space-around
+   -> Equal space around every row.
+
+   space-evenly
+   -> Equal space everywhere.
+
+   stretch (Default)
+   -> Rows stretch to fill
+      the available space.
+*/
+
+/* ===========================
+   FLEXBOX - PART 6
+   ===========================
+
+   align-self
+   -> Aligns ONE specific flex item
+      along the CROSS AXIS.
+
+   -> Overrides align-items
+      for that particular item.
+
+   Works on:
+   Cross Axis only.
+
+   Common Values:
+
+   auto (Default)
+   -> Uses the value of align-items.
+
+   flex-start
+   -> Moves the item to the beginning
+      of the Cross Axis.
+
+   flex-end
+   -> Moves the item to the end
+      of the Cross Axis.
+
+   center
+   -> Places the item at the center
+      of the Cross Axis.
+
+   stretch
+   -> Stretches the item to fill
+      the Cross Axis.
+      (Works only if the item has no
+      fixed size on the Cross Axis.)
+
+   baseline
+   -> Aligns the item's text baseline
+      with the other items.
+*/
+/* ===========================
+   FLEXBOX - PART 7
+   ===========================
+
+   FLEX SIZING
+
+   Flex sizing controls how much
+   space each flex item occupies.
+
+   The four properties are:
+
+   1. flex-basis
+   2. flex-grow
+   3. flex-shrink
+   4. flex (Shorthand)
+
+====================================
+1. flex-basis
+====================================
+
+-> Sets the INITIAL size of a flex item
+   along the MAIN AXIS.
+
+-> Think of it as the starting size
+   before extra space is distributed.
+
+Works on:
+Main Axis only.
+
+If flex-direction: row
+-> Controls WIDTH.
+
+If flex-direction: column
+-> Controls HEIGHT.
+
+Values:
+
+auto (Default)
+-> Uses the item's width/height.
+
+length
+-> Example:
+   100px
+   200px
+   30%
+
+IMPORTANT:
+
+If flex-basis is given,
+it takes priority over
+width (or height in a column).
+
+====================================
+2. flex-grow
+====================================
+
+-> Decides how much a flex item
+   can GROW when extra space is available.
+
+Default:
+0
+
+Meaning:
+
+0
+-> Item will NOT grow.
+
+1
+-> Item takes an equal share
+   of the extra space.
+
+2
+-> Item grows twice as much
+   as an item with grow:1.
+
+3
+-> Item grows three times as much,
+   and so on.
+
+Examples:
+
+Item A: flex-grow:1;
+Item B: flex-grow:2;
+
+Result:
+Item B gets twice the
+extra space of Item A.
+
+====================================
+3. flex-shrink
+====================================
+
+-> Decides how much a flex item
+   SHRINKS when there isn't enough space.
+
+Default:
+1
+
+Meaning:
+
+0
+-> Item will NOT shrink.
+
+1
+-> Shrinks normally.
+
+2
+-> Shrinks twice as much
+   as an item with shrink:1.
+
+Higher value
+-> More shrinking.
+
+====================================
+4. flex (Shorthand)
+====================================
+
+-> Shorthand for:
+
+flex-grow
+flex-shrink
+flex-basis
+
+Syntax:
+
+flex: grow shrink basis;
+
+Example:
+
+flex: 1 1 200px;
+
+Means:
+
+flex-grow:1;
+flex-shrink:1;
+flex-basis:200px;
+
+Example:
+
+flex:2;
+
+Means:
+
+flex-grow:2;
+flex-shrink:1;
+flex-basis:0%;
+
+====================================
+IMPORTANT
+====================================
+
+Extra Space
+↓
+
+flex-grow decides
+who gets it.
+
+Not Enough Space
+↓
+
+flex-shrink decides
+who loses space.
+
+Starting Size
+↓
+
+flex-basis decides it first.
+*/
+
+
+#container {
+    height: 550px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+
+    /* Makes this a Flex Container */
+    display: flex;
+
+    /* Places items from top to bottom */
+    /* flex-direction: row-reverse; */
+    justify-content:flex-end;
+    /* flex-wrap:wrap; */
+    align-items:flex-end;
+    /* align-content:space-evenly; */
+}
+
+#orange{
+    align-self:center;
+    flex-grow:2;
+}
+#red{
+   flex-shrink:2;
+}
+#green{
+   flex: 2 2 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+#container div {
+    height: 100px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+
+#violet {
+    background-color: #9400d3;
+}
+
+#indigo {
+    background-color: #4b0082;
+}
+
+#blue {
+    background-color: #0000ff;
+}
+
+#green {
+    background-color: #00ff00;
+    color: black;
+}
+
+#yellow {
+    background-color: #ffff00;
+    color: black;
+}
+
+#orange {
+    background-color: #ff7f00;
+}
+
+#red {
+    background-color: #ff0000;
+}
+

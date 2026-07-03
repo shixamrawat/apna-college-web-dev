@@ -1,0 +1,49 @@
+/* Alpha - The alpha channel specifies to opacity of a color
+    1 can be set using rgba
+    2 can be set using hashcode with 00 for 0 and ff for 1 alpha value
+    3 can be set using rgb(255 0 0 /20%)
+*/
+ #alpha{
+    height:200px;
+    width:200px;
+    background-color:rgba(255, 0, 0, 0.5);
+    /* background-color:#ff0000aa; this is hashcode */
+    /* background-color:rgb(255 0 0 /20%); */
+}
+
+/* opacity CSS property sets the opacity of an element
+    this set the opacity of the whole element not just color
+    */
+#opacity{
+     height:200px;
+     width:200px;
+     background-color:green;
+     opacity:70%;
+ }
+h2{
+    text-align:center;
+}
+ /* transitions - provide a way to control animation speed when changing CSS properties  Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time
+   #transition: <property> <duration> <timing-function> <delay>;
+    */
+    /* 1 transition-property- Specifies the name or names of the CSS properties to which transitions should be applied 
+    2  transition-duration - Specifies the duration over which transitions should occur
+    3 transition-timing-function
+     Specifies a function to define how intermediate values for properties are computed.
+    4 transition-delay - Defines how long to wait between the time a property is changed and the transition actually begins*/
+    
+
+ #transition{
+    height:200px;
+    width:200px;
+    background-color:lime;
+    margin-top:20px;
+    transition-duration:1s;
+    transition:all 1s ease-out 1s;
+ }
+ #transition:hover{
+    background-color:aqua;
+    border-radius:50%;
+    rotate:180deg;
+
+ }
