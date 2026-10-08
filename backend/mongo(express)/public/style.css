@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.chat {
+    background-color: white;
+    width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.msg {
+    background-color: #d9fdd3;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* hr {
+    width: 500px;
+} */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.chat {
+    background-color: white;
+    width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.msg {
+    background-color: #d9fdd3;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* hr {
+    width: 500px;
+} */
+form {
+    text-align: center;
+    margin: 30px 0;
+}
+
+button {
+    background-color: #128c7e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #075e54;
+}
+
+.new-chat-form {
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.new-chat-form input,
+.new-chat-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.new-chat-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.new-chat-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #128c7e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.new-chat-form button:hover {
+    background-color: #075e54;
+}
+
+/* Edit Chat */
+
+.edit-chat-form {
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-chat-form h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.edit-chat-form p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.edit-chat-form textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.edit-chat-form textarea:focus {
+    outline: none;
+    border-color: #128c7e;
+}
+
+.edit-chat-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #128c7e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit-chat-form button:hover {
+    background-color: #075e54;
+}
+
+.delete{
+    background-color: red;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/chats/new" method="GET">
+        <button>Create a new chat</button>
+    </form>
+    <% for(let chat of chats){ %>
+        <div class="chat">
+            <p>From: <i> <%= chat.from %></i></p>
+            <div class="msg">
+                <p><%= chat.msg %></p>
+            </div>
+            <p>To:<i><%= chat.to %></i></p>
+            <hr>
+            <p>Time: <%= chat.time.toString().split(" ")[4] %></p>
+            <p>Date: <%= chat.time.toString().split(" ").slice(1,4).join(" ") %></p>
+            <p>Day: <%=chat.time.toString().split(" ")[0] %></p>
+            <form action="chats/<%=chat._id%>/edit" method="get">
+                <button>Edit</button>
+            </form>
+            <form action="chats/<%=chat._id%>/delete?_method=DELETE" method="post" onsubmit="return confirm('Are you sure you want to delete this message?')">
+                <button class="delete">Delete</button>
+            </form>
+        </div>
+    <% } %>
+
+</body>
+</html>
